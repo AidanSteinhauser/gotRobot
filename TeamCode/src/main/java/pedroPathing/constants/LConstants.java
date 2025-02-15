@@ -10,13 +10,13 @@ public class LConstants {
         ThreeWheelConstants.turnTicksToInches = 0.0005589587;
         ThreeWheelConstants.leftY = 6.109;
         ThreeWheelConstants.rightY = -6.109;
-        ThreeWheelConstants.strafeX = -6.391;
+        ThreeWheelConstants.strafeX = 6.391;
         ThreeWheelConstants.leftEncoder_HardwareMapName = "fl";
         ThreeWheelConstants.rightEncoder_HardwareMapName = "fr";
         ThreeWheelConstants.strafeEncoder_HardwareMapName = "br";
         ThreeWheelConstants.leftEncoderDirection = Encoder.REVERSE;
         ThreeWheelConstants.rightEncoderDirection = Encoder.FORWARD;
-        ThreeWheelConstants.strafeEncoderDirection = Encoder.FORWARD;
+        ThreeWheelConstants.strafeEncoderDirection = Encoder.REVERSE;
     }
 }
 
