@@ -32,7 +32,7 @@ public class autoTest extends OpMode {
     private Timer actionTimer;
     private Timer opmodeTimer;
     private int pathState;
-    private final Pose startPose = new Pose(135.65, 80.35, Math.toRadians(270));
+    private final Pose startPose = new Pose(135.65, 81, Math.toRadians(270));
     private final Pose firstPosePreOuttake = new Pose(110, 78, Math.toRadians(270));
     //TODO OUTTAKE ONE
     private final Pose secondPoseOuttake = new Pose(106.5, 78, Math.toRadians(270));
