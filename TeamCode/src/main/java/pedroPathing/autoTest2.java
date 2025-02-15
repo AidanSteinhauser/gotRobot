@@ -16,15 +16,14 @@ import com.pedropathing.util.Timer;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
-import com.qualcomm.robotcore.hardware.DcMotorSimple;
 
 import org.firstinspires.ftc.robotcore.external.Telemetry;
 
 import pedroPathing.constants.FConstants;
 import pedroPathing.constants.LConstants;
 
-@Autonomous(name = "autoTest", group = "testing")
-public class autoTest extends OpMode {
+@Autonomous(name = "autoTest2", group = "testing")
+public class autoTest2 extends OpMode {
     private Follower follower;
     private Telemetry telemetryA;
     private Timer pathTimer;
@@ -35,7 +34,7 @@ public class autoTest extends OpMode {
     private final Pose startPose = new Pose(135, 80.4, Math.toRadians(180));
     private final Pose firstPosePreOuttake = new Pose(110, 78, Math.toRadians(180));
     //TODO OUTTAKE ONE
-    private final Pose secondPoseOuttake = new Pose(106.5, 78, Math.toRadians(270));
+    private final Pose secondPoseOuttake = new Pose(106.5, 78, Math.toRadians(180));
     private final Pose thirdPosePrePushControlOne = new Pose(131, 117.5, Math.toRadians(0));
     private final Pose thirdPosePrePushControlTwo = new Pose(79, 102.5, Math.toRadians(0));
     private final Pose thirdPosePrePushOne = new Pose(82, 120, Math.toRadians(0));
@@ -260,126 +259,9 @@ public class autoTest extends OpMode {
             case 7:
                 if (!follower.isBusy()) {
                     follower.followPath(action9PreIntakeOne, true);
-                    setPathState(8);
-                }
-                break;
-            case 8:
-                if (!follower.isBusy()) {
-                    follower.setMaxPower(0.6);
-                    follower.followPath(action10IntakeOne, true);
-                    setPathState(9);
-                }
-                break;
-            case 9:
-                if (!follower.isBusy()) {
-                    follower.holdPoint(tenthPoseIntakeOne);
-                    follower.setMaxPower(1);
-                    follower.followPath(action11PostIntakeOne, true);
-                    setPathState(10);
-                }
-                break;
-            case 10:
-                if (!follower.isBusy()) {
-                    follower.setMaxPower(1);;
-                    follower.followPath(action12PreOuttakeTwo, true);
-                    setPathState(11);
-                }
-                break;
-            case 11:
-                if (!follower.isBusy()) {
-                    follower.setMaxPower(1);
-                    follower.followPath(action13OuttakeTwo, true);
-                    setPathState(12);
-                }
-                break;
-            case 12:
-                if (!follower.isBusy()) {
-                    follower.holdPoint(thirteenthPoseOuttakeTwo);
-                    sleep(450);
-                    follower.setMaxPower(1);;
-                    follower.followPath(action14PreIntakeTwo, true);
-                    setPathState(13);
-                }
-                break;
-            case 13:
-                if (!follower.isBusy()) {
-                    follower.setMaxPower(0.6);
-                    follower.followPath(action15IntakeTwo, true);
-                    setPathState(14);
-                }
-                break;
-            case 14:
-                if (!follower.isBusy()) {
-                    follower.holdPoint(fifteenthPoseIntakeTwo);
-                    follower.setMaxPower(1);;
-                    follower.followPath(action16PostIntakeTwo, true);
-                    setPathState(15);
-                }
-                break;
-            case 15:
-                if (!follower.isBusy()) {
-                    follower.setMaxPower(1);;
-                    follower.followPath(action17PreOuttakeThree, true);
-                    setPathState(16);
-                }
-                break;
-            case 16:
-                if (!follower.isBusy()) {
-                    follower.setMaxPower(1);
-                    follower.followPath(action18OuttakeThree, true);
-                    setPathState(17);
-                }
-                break;
-            case 17:
-                if (!follower.isBusy()) {
-                    follower.holdPoint(eighteenthPoseOuttakeThree);
-                    sleep(450);
-                    follower.setMaxPower(1);;
-                    follower.followPath(action19PreIntakeThree, true);
-                    setPathState(18);
-                }
-                break;
-            case 18:
-                if (!follower.isBusy()) {
-                    follower.setMaxPower(0.6);
-                    follower.followPath(action20IntakeThree, true);
-                    setPathState(19);
-                }
-                break;
-            case 19:
-                if (!follower.isBusy()) {
-                    follower.holdPoint(twentiethPoseIntakeThree);
-                    follower.setMaxPower(1);;
-                    follower.followPath(action21PostIntakeThree, true);
-                    setPathState(20);
-                }
-                break;
-            case 20:
-                if (!follower.isBusy()) {
-                    follower.setMaxPower(1);;
-                    follower.followPath(action22PreOuttakeFourth, true);
-                    setPathState(21);
-                }
-                break;
-            case 21:
-                if (!follower.isBusy()) {
-                    follower.setMaxPower(1);
-                    follower.followPath(action23OuttakeFourth, true);
-                    setPathState(22);
-                }
-                break;
-            case 22:
-                if (!follower.isBusy()) {
-                    follower.holdPoint(twentyThirdPoseOuttakeFour);
-                    sleep(450);
-                    follower.setMaxPower(1);
-                    follower.followPath(action24Park, true);
-                    setPathState(23);
-                }
-            case 23:
-                if (!follower.isBusy()) {
                     setPathState(-1);
                 }
+                break;
         }
     }
 
