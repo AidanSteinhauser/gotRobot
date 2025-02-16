@@ -34,18 +34,15 @@ public class autoTest2 extends OpMode {
     private final Pose startPose = new Pose(135, 80.4, Math.toRadians(180));
     private final Pose firstPosePreOuttake = new Pose(110, 78, Math.toRadians(180));
     private final Pose secondPoseOuttake = new Pose(106.5, 78, Math.toRadians(180));
-    private final Pose thirdPosePrePushControlOne = new Pose(131, 117.5, Math.toRadians(0));
-    private final Pose thirdPosePrePushControlTwo = new Pose(79, 102.5, Math.toRadians(0));
-    private final Pose thirdPosePrePushOne = new Pose(82, 120, Math.toRadians(0));
-    private final Pose fourthPosePostPushOne = new Pose(128, 120, Math.toRadians(0));
-    private final Pose fifthPosePrePushTwoControlOne = new Pose(81, 108, Math.toRadians(0));
-    private final Pose fifthPosePrePushTwo = new Pose(84, 130, Math.toRadians(0));
-    private final Pose sixthPosePostPushTwo = new Pose(128, 130, Math.toRadians(0));
-    private final Pose seventhPosePrePushThreeControlOne = new Pose(82, 120, Math.toRadians(0));
-    private final Pose seventhPosePrePushThree = new Pose(82, 135.5, Math.toRadians(0));
-    private final Pose eighthPosePostPushThree = new Pose(128, 135.5, Math.toRadians(0));
-    private final Pose ninthPosePreIntakeOne = new Pose(127, 113, Math.toRadians(90));
-    private PathChain action6PushTwo, action24Park, action11turn, action9PreIntakeOne, action16Turn, action22PreOuttakeFourth, action23OuttakeFourth, action15IntakeTwo, action21turn, action21PostIntakeThree, action20IntakeThree, action19PreIntakeThree, action18OuttakeThree, action17PreOuttakeThree,action16PostIntakeTwo, action14PreIntakeTwo, action12PreOuttakeTwo, action10IntakeOne, action11PostIntakeOne, action8PushThree, action7CurvedForPushThree, action1PreOuttakeOne, action5CurvedForPushTwo, action2OuttakeOne, action13OuttakeTwo, action3DoubleCurvedPrePush, action4PushOne;
+    private final Pose thirdPosePrePushControlOne = new Pose(132, 118, Math.toRadians(180));
+    private final Pose thirdPosePrePushControlTwo = new Pose(79, 103, Math.toRadians(180));
+    private final Pose thirdPosePrePushOne = new Pose(85, 119, Math.toRadians(180));
+    private final Pose fourthPosePostPushOne = new Pose(128, 119, Math.toRadians(180));
+    private final Pose fifthPosePrePushTwoControlOne = new Pose(81, 108, Math.toRadians(90));
+    private final Pose fifthPosePrePushTwo = new Pose(84, 130, Math.toRadians(90));
+    private final Pose sixthPosePostPushTwo = new Pose(128, 130, Math.toRadians(90));
+    private final Pose ninthPosePreIntakeOne = new Pose(126, 135, Math.toRadians(90));
+    private PathChain action6PushTwo, action9PreIntakeOne, action1PreOuttakeOne, action5CurvedForPushTwo, action2OuttakeOne, action3DoubleCurvedPrePush, action4PushOne;
 
     public void buildPaths() {
         action1PreOuttakeOne = follower.pathBuilder()
@@ -158,8 +155,7 @@ public class autoTest2 extends OpMode {
         telemetry.addData("y", follower.getPose().getY());
         telemetry.addData("heading", follower.getPose().getHeading());
         telemetry.update();
-
-        telemetryA = new MultipleTelemetry(this.telemetry, FtcDashboard.getInstance().getTelemetry());
+        follower.drawOnDashBoard();
         telemetryA.update();
     }
 
@@ -170,7 +166,6 @@ public class autoTest2 extends OpMode {
         opmodeTimer = new Timer();
         sillyTimer = new Timer();
         opmodeTimer.resetTimer();
-
         Constants.setConstants(FConstants.class, LConstants.class);
         follower = new Follower(hardwareMap);
         follower.setStartingPose(startPose);
